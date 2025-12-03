@@ -1,0 +1,70 @@
+/* ===========================index / news list page setting=========================== */
+
+.content a{
+    text-decoration: none;
+}
+.card_news_list{
+    /* background-color: #E4DEDA; */
+
+    padding: 50px 0;
+    border-bottom: 1px solid var(--c-primary); /* #CCA455 */
+}
+
+.card_text{
+    padding: 40px;
+}
+
+.card_pic{
+    display: flex;
+    margin: -10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_pic>img{
+    width: 100%;
+}
+
+.card_icon{
+    margin: 40px 0 0 0;
+    font-size: var(--fs-icon-28); /* 改為 28px (原本是 32px) */
+    color: var(--c-primary); /* #CCA455 */
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+
+.card_icon::before{
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: 1px solid var(--c-primary); /* #CCA455 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+
+}
+
+.card_icon i{
+    transition: .3s;
+    position: relative;
+    z-index: 1;
+
+}
+
+.cardwrap_news_list a :hover .card_icon i{
+    color: var(--c-bg-general); /* #F3EDE9 */
+    transform: translateX(30px);
+
+}
+
+.cardwrap_news_list a :hover .card_icon::before{
+    background-color: var(--c-primary); /* #CCA455 */
+    transform: translate(calc(-50% + 30px), -50%);
+    
+}
+
+/* ===========================index / news list page setting=========================== */

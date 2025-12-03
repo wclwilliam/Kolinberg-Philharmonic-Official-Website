@@ -1,0 +1,32 @@
+.news_content{
+    padding: 30px 0 100px;
+}
+
+
+.pic{
+    padding: 50px 0 50px;
+}
+
+
+.pic img{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+
+.news_content .text h2 {
+    padding: 20px 0 25px;
+}
+
+.news_content .text h3 {
+    padding: 30px 0 15px;
+}
+
+.news_content .text p {
+    padding: 10px 0;
+}
+
+.card_date {
+    display: block;
+    padding-top: 20px;
+}

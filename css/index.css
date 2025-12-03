@@ -1,0 +1,493 @@
+/* ===========================header setting 特殊設定=========================== */
+
+body.index header .function_list>i {
+    color: var(--c-text-light);
+}
+
+body.index header nav {
+    color: var(--c-text-light);
+
+}
+
+/* ===========================首頁 hero setting=========================== */
+
+.hero {
+    margin-top: -100px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 700px;
+    max-height: 1080px;
+    position: relative;
+    z-index: 0;
+}
+
+.hero .bglinear {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.hero .bglinear img.top {
+    width: 100%;
+    height: 180px;
+}
+
+.hero .bglinear img.bottom {
+    width: 100%;
+    height: 30.555556%;
+}
+
+.hero .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 70%;
+    z-index: 1;
+}
+
+.hero .bg img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--c-bg-black);
+    z-index: 0;
+    opacity: 1;
+}
+
+.hero_title {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    white-space: nowrap;
+}
+
+h1 {
+    color: var(--c-text-strong);
+    font-family: var(--font-hero);
+    font-size: var(--fs-hero);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+}
+
+.hero_title h1::before {
+    content: "";
+    width: 120%;
+    height: 0.5em;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: var(--c-text-main);
+    opacity: 50%;
+    z-index: -1;
+}
+
+.calendar_button {
+    font-size: clamp(var(--fs-lg), 1.67vw, var(--fs-2xl));
+    font-weight: var(--fw-semibold);
+    background-color: var(--c-bg-brown-alpha);
+    box-sizing: border-box;
+    line-height: 1;
+    letter-spacing: var(--ls-base);
+    color: var(--c-text-light);
+    border: var(--c-primary) solid 1.5px;
+    padding: 0.6em 1.8em;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: .2s;
+}
+
+.calendar_button:hover {
+    background-color: var(--c-bg-brown-alpha-hover);
+    color: var(--c-text-strong);
+    transform: translate(-50%, -50%) scale(1.02);
+    transition: .2s;
+}
+
+/* ===========================首頁 hero setting=========================== */
+
+
+
+/* ===========================首頁 capaign setting=========================== */
+
+
+.campaign_to_news {
+    background-image: url(../image/0_index/campaign_ribbon.png), url(../image/0_index/news_linear.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center top, center bottom;
+    background-size: 100% 70%, 100% 60%;
+
+}
+
+.campaign {
+    padding-top: 120px;
+    position: relative;
+}
+
+.campaign a {
+    text-decoration: none;
+    width: fit-content;
+}
+
+.campaign .card {
+    background-color: var(--c-bg-primary-alpha);
+    width: 100%;
+    display: flex;
+}
+
+
+
+.campaign .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3%;
+    padding: 5% 5% 5% 7%;
+}
+
+.campaign .text h2 {
+    padding: 0 0 0 0;
+}
+
+.campaign .text p {
+    padding: 0 0 20px 0;
+}
+
+.campaign .text span.date {
+    font-size: var(--fs-md);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-base);
+    letter-spacing: var(--ls-base);
+    display: block;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--c-text-main);
+    width: fit-content;
+    margin: 15px 0;
+}
+
+
+.program_button {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    box-sizing: border-box;
+    color: var(--c-text-main);
+    line-height: 1;
+    letter-spacing: var(--ls-base);
+    border: var(--c-border-dark-alpha) solid 1.5px;
+    padding: 15px 45px;
+    width: fit-content;
+    background-color: transparent;
+    transition: .2s;
+}
+
+.program_button:hover {
+    color: var(--c-text-white);
+    border: var(--c-text-white) solid 1.5px;
+    transition: .2s;
+}
+
+.campaign_photo {
+    padding: 3% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.campaign_photo>img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover
+}
+
+/* ===========================首頁 capaign setting=========================== */
+
+/* ===========================首頁 news setting=========================== */
+
+.news {
+    margin: 150px auto 0 auto;
+    padding-bottom: 120px;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5625%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.news .wrap a {
+    display: block;
+    flex-basis: 32.291667%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-decoration: none;
+
+}
+
+.news_card {
+    /* border-radius: 15px; */
+    transition: .2s;
+}
+
+.news_photo img {
+    /* border-radius: 15px 15px 0 0; */
+    display: block;
+    width: 100%;
+}
+
+.news_content {
+    background-color: var(--c-bg-card);
+    /* border-radius: 0 0 15px 15px; */
+    box-sizing: content-box;
+    border-left: 1px solid var(--c-primary);
+    border-right: 1px solid var(--c-primary);
+    border-bottom: 1px solid var(--c-primary);
+    padding: 40px 30px 50px 30px;
+}
+
+h3.card_title {
+    padding: 15px 0;
+}
+
+.news .wrap a:nth-child(1) {
+    transform: translate(0, -50px);
+}
+
+.news .wrap a:nth-child(3) {
+    transform: translate(0, 50px);
+}
+
+.news .wrap a .news_card:hover {
+    scale: 1.02;
+    box-shadow: -4px 4px 10px 0 var(--c-shadow-card);
+    transition: .2s;
+}
+
+/* ===========================首頁 news setting=========================== */
+
+/* ===========================首頁 webshop setting=========================== */
+.webshop {
+    background-color: var(--c-bg-warm);
+    background-image: url(../image/0_index/black-thread-light.png);
+}
+
+.webshop .text a {
+    width: fit-content;
+}
+
+.webshop .cardlist a {
+    text-decoration: none;
+    width: 38%;
+    max-width: 345px;
+    height: fit-content;
+}
+
+.webshop .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.webshop .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.webshop h2 {
+    padding-bottom: 30px;
+}
+
+.webshop p.description {
+    margin-bottom: 25px;
+}
+
+.webshop .btn {
+    box-sizing: border-box;
+    border: 1.5px solid var(--c-text-main);
+    /* border-radius: 10px; */
+    padding: 15px 80px;
+    color: var(--c-text-main);
+    line-height: 1;
+    letter-spacing: var(--ls-base);
+    width: fit-content;
+    transition: .2s;
+}
+
+.webshop .btn:hover {
+    border: 1.5px solid var(--c-primary);
+    color: var(--c-primary);
+    transition: .2s;
+}
+
+.webshop .cardlist {
+    padding: 120px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.webshop .card {
+    background-color: transparent;
+    /* border-radius: 15px; */
+    overflow: hidden;
+    transition: .2s;
+}
+
+.webshop .card:hover {
+    box-shadow: -4px 4px 10px 0 var(--c-shadow-card);
+    scale: 1.02;
+    transition: .2s;
+}
+
+.webshop .card i {
+    color: var(--c-text-white);
+    transition: .2s;
+}
+
+.webshop .card:hover i {
+    color: var(--c-primary);
+    transition: .2s;
+}
+
+
+.webshop .cardpic img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.webshop .cardtext {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 20px;
+    background-color: var(--c-secondary);
+}
+
+.webshop .icon {
+    align-self: flex-end;
+    padding-top: 10px;
+}
+
+.webshop .icon i {
+    font-size: var(--fs-2xl);
+    color: var(--c-text-white);
+}
+
+.cardtext h3,
+.cardtext p {
+    color: var(--c-text-white);
+    padding-top: 10px;
+}
+
+.product_cat {
+    color: var(--c-text-strong);
+}
+
+
+/* ===========================首頁 webshop setting=========================== */
+
+/* ===========================首頁 membership setting=========================== */
+
+.support {
+    background-image:
+        linear-gradient(#cca45540, #cca45540),
+        linear-gradient(#000000b2, #000000b2);
+    background-size: cover;
+    background-position: center center;
+    padding: 180px 0 70px;
+    width: 100%;
+    position: relative;
+}
+
+.support::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/0_index/membership_pic_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: .8;
+    z-index: -1;
+}
+
+.support .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--c-text-white);
+}
+
+.support .text h2 {
+    position: relative;
+}
+
+.support .text h2::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 130%;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(204, 164, 85, .5) 25%,
+            rgba(204, 164, 85, .5) 75%,
+            rgba(255, 255, 255, 0) 100%);
+    z-index: 5;
+
+}
+
+.support .btn {
+    box-sizing: border-box;
+    border: 1.5px solid var(--c-text-white);
+    /* border-radius: 10px; */
+    padding: 15px 80px;
+    margin: 50px;
+    color: var(--c-text-white);
+    line-height: 1;
+    letter-spacing: var(--ls-base);
+    width: fit-content;
+    transition: .2s;
+}
+
+.support .btn:hover {
+    border: 1.5px solid var(--c-primary);
+    color: var(--c-primary);
+    transition: .2s;
+}

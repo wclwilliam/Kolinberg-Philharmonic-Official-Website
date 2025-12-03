@@ -1,0 +1,602 @@
+body {
+    font-family: "Fira Sans", sans-serif;
+    color: #181818;
+}
+
+body.general {
+    /* 非特殊頁面適用背景 */
+    background-image: url(../image/share_item/bg_groovepaper.png);
+    background-color: #F3EDE9;
+}
+
+.container {
+    /* 內容範圍view port */
+    max-width: 1440px;
+}
+
+/* 文字通用設定 */
+
+h2.xl_52px {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+}
+
+span.xxlg_40px,
+h2.lg_40px {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+}
+
+h2.md_24px,
+h3.lg_24px {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+}
+
+h3.md_20px {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+}
+
+span.lg_20px,
+p.lg_20px {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+span.md_16px,
+p.md_16px {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+span.sm_14px,
+p.sm_14px {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+nav.nav_18px {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+.btn.lg_24px {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* 特殊文字設定 */
+
+span.card_date {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 0.7;
+    letter-spacing: 0.2em;
+}
+
+
+span.product_cat {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 0.7;
+    letter-spacing: 0.2em;
+}
+
+span.product_cat_lg {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 0.7;
+    letter-spacing: 0.2em;
+}
+
+data.price{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+}
+
+
+/* 文字方塊通用設定 */
+
+h3.card_title {
+    padding: 30px 0;
+}
+
+
+/* 換頁按鈕通用設定 */
+
+.pagination {
+    margin: 120px auto;
+}
+
+.pagination ul {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.pagination a.link,
+.pagination a.link_active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+
+}
+
+.pagination a.link {
+    background-color: #dadada;
+}
+
+.pagination a.link_active {
+    background-color: #181818;
+    font-size: 20px;
+    color: #dadada;
+}
+
+.pagination a.link:hover,
+.pagination a.link_active:hover {
+    scale: 1.1;
+
+}
+
+
+/* 換頁按鈕通用設定 */
+
+
+/* 返回箭頭通用設定 */
+
+
+.back_arrow {
+    position: relative;
+    text-decoration: none;
+    color: #181818;
+    padding-left: 100px;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    transition: .3s;
+}
+
+.back_arrow::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 10%;
+    top: 110%;
+    width: 200px;
+    height: 1px;
+    background-color: #181818;
+    transition: .3s;
+}
+
+.back_arrow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc(10% + 4px);
+    top: 110%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    border-left: 1px solid #181818;
+    transition: .3s;
+}
+
+.back_arrow:hover::before {
+    background-color: #CCA455;
+    width: 180px;
+}
+
+.back_arrow:hover::after {
+    border-color: #CCA455;
+}
+
+.back_arrow:hover {
+    color: #CCA455;
+    padding-left: 80px;
+}
+
+/* 返回箭頭通用設定 */
+
+
+/* 商品卡片通用設定 */
+.product_cardlist .cardinner{
+    border: 1px solid #CCA455;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product_cardlist .cardinner:hover{
+    box-shadow: -4px 4px 10px 0 #00000033;
+}
+
+.product_cardlist .cardpic{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product_cardlist .cardpic img{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.product_cardlist .cardtext{
+    background-color: #F9F7F5;
+    padding: 20px;
+}
+
+.product_cardlist .cardtext h3{
+    margin-top: 10px;
+}
+
+.product_cardlist .product_description.hovershow{
+    position: absolute;
+    background-color: #181818BF;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: .3s;
+}
+.product_cardlist .product_description.hovershow p{    
+    padding: 0 20px;
+}
+
+.product_cardlist .cardinner:hover .product_description.hovershow{
+    opacity: 1;
+    transition: .3s;
+}
+
+.product_cardlist a{
+    text-decoration: none;
+}
+/* 商品卡片通用設定 */
+
+
+
+/* 篩選通用設定 */
+
+.filter_area .filter_btn {
+    font-family: "Fira Sans", sans-serif;
+    background-color: transparent;
+    color: #CCA455;
+    border: 2px solid #CCA455;
+    padding: 10px 0;
+    width: 225px;
+    height: 53px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    margin-right: 15px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.filter_area .filter_btn:hover {
+    color: #fff;
+    background-color: #CCA455;
+    transition: .3s;
+}
+/* 篩選通用設定 */
+
+
+/* 搜尋通用設定 */
+
+.search_area {
+    margin-left: auto;
+}
+
+.searchbar {
+    width: 588px;
+    height: 53px;
+    box-sizing: border-box;
+    border: 2px solid #CCA455;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    padding: 0 15px;
+    font-family: "Fira Sans", sans-serif;
+}
+
+.searchbar:focus {
+    /* border: 2px solid #FFD700;; */
+    outline: 1px solid #CCA455;
+    /* box-shadow: -4px 4px 10px 0 #00000033;; */
+}
+
+.search_submit_btn {
+    background-color: transparent;
+    height: 53px;
+    box-sizing: border-box;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    color: #CCA455;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 2px solid #CCA455;
+    border-radius: 10px;
+    padding: 0 16px;
+    margin-left: 20px;
+    transition: .3s;
+}
+
+.search_submit_btn:hover {
+    color: #fff;
+    background-color: #CCA455;
+    transition: .3s;
+}
+
+
+/* ===========================header setting 全頁面適用=========================== */
+/* ===========================特殊設定位於各css檔案內=========================== */
+
+header {
+    height: 100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 20px;
+    /* color: black; */
+    position: relative;
+    z-index: 2;
+}
+
+header .logo {
+    grid-column: 1/6;
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 240px;
+}
+
+header nav {
+    grid-column: 6/11;
+    display: flex;
+    align-items: center;
+}
+
+.nav_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+}
+
+.nav_list li a {
+    display: block;
+    text-align: center;
+    text-decoration-color: transparent;
+    color: inherit;
+    padding: 10px 0;
+    transition: .3s;
+}
+
+.nav_list li a:hover {
+    color: #CCA455;
+}
+
+header .function_list {
+    grid-column: 11/13;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    color: #181818;
+}
+
+header .function_list>i {
+    color: #181818;
+    font-size: 20px;
+}
+
+/* ===========================banner setting=========================== */
+
+body.general .banner {
+    height: 280px;
+    background-color: #A290784D;
+    display: flex;
+}
+
+
+body.general .banner_title {
+    font-family: "Outfit", sans-serif;
+    font-size: 78px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #181818;
+    margin: auto;
+}
+
+/* ===========================banner setting=========================== */
+
+
+/* ===========================bottom newsletter setting=========================== */
+
+
+.newsletter {
+    background-image: url(../image/share_item/newsletter_bg.jpg);
+    background-repeat: no-repeat;
+    height: 440px;
+    background-position: center top;
+}
+
+.newsletter .container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.newsletter .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.newsletter .text h2 {
+    padding-bottom: 20px;
+}
+
+.newsletter .email {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 120px;
+}
+
+.newsletter .input_email input {
+    width: 412px;
+    height: 52px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #181818;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    padding: 0 15px;
+    font-family: "Fira Sans", sans-serif;
+
+}
+
+input::placeholder {
+    color: #181818B2;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-family: "Fira Sans", sans-serif;
+
+}
+
+input:focus {
+    outline: 2px solid #CCA455;
+}
+
+.newsletter .submit_btn {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    box-sizing: content-box;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 16px;
+    margin-left: 20px;
+}
+
+/* ===========================bottom newsletter setting=========================== */
+
+footer {
+    background-color: #000;
+}
+
+footer .container {
+    padding-top: 50px;
+    color: #dadada;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, auto);
+    column-gap: 20px;
+}
+
+footer .logo {
+    grid-column: 1/6;
+}
+
+footer .social_links {
+    grid-row: 2/3;
+    grid-column: 1/3;
+}
+
+footer .social_links {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+footer .social_links a {
+    padding: 6px 0;
+    text-decoration-color: transparent;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    transition: .3s;
+}
+
+footer .social_links a:hover {
+    color: #CCA455;
+}
+
+footer .social_links i {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+footer .contact_info {
+    grid-row: 2/3;
+    grid-column: 3/8;
+    padding: 24px 0;
+}
+
+footer .contact_info p {
+    display: block;
+    padding: 6px 0;
+}
+
+footer nav {
+    grid-column: 8/13;
+    display: flex;
+    align-items: center;
+}
+
+footer .divider {
+    grid-column: 1/13;
+    grid-row: 3/4;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+
+footer .copyright {
+    grid-column: 1/13;
+    grid-row: 4/5;
+    text-align: end;
+    padding: 18px 0;
+}
