@@ -38,6 +38,11 @@
             <i class="fa-solid fa-bell"></i>
             <i class="fa-solid fa-user"></i>
         </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
     <section class="hero">
         <div class="bg">
@@ -50,8 +55,10 @@
         <div class="hero_title">
             <h1>Discover Distinction</h1>
         </div>
-        <a href="./program.html"><div class="calendar_button">
-            View Calendar</div></a>
+        <a href="./program.html">
+            <div class="calendar_button">
+                View Calendar</div>
+        </a>
     </section>
 
 
@@ -61,12 +68,14 @@
             <div class="card">
                 <div class="text col-6">
                     <h2 class="fs-2xl fw-bold">James Conducts Mahler's Seventh</h2>
-                    <span class="date">16 Feb. 2026</span>
+                    <span class="date fs-md fw-bold">16 Feb. 2026</span>
                     <p class="fs-md">James calls Mahler’s Seventh a “cosmic symphony,” moving from chaos to glory.
                         Known as the "Song of
                         the Night," James leads the Kolinberg Philharmonic in this colossal opus.</p>
-                    <a href="./program.html"><div class="program_button">
-                        View Program </div></a>
+                    <a href="./program.html">
+                        <div class="program_button">
+                            View Program </div>
+                    </a>
                 </div>
                 <div class="campaign_photo col-6">
                     <img src="./image/0_index/campaign_pic_1.jpg" alt="">
@@ -84,7 +93,8 @@
                         </div>
                         <div class="news_content">
                             <span class="card_date">16 Oct. 2025</span>
-                            <h3 class="card_title fs-xl fw-bold">Live recording of Mahler’s Symphony No. 8 with James</h3>
+                            <h3 class="card_title fs-xl fw-bold">Live recording of Mahler’s Symphony No. 8 with James
+                            </h3>
                             <p class="fs-base">Kolinberg Philharmonic and James' live recording of Mahler's Symphony No.
                                 8
                                 will be released by Decca Classics on 7 November 2025. Captured during the 2025 Mahler
@@ -100,7 +110,8 @@
                         </div>
                         <div class="news_content">
                             <span class="card_date">16 Oct. 2025</span>
-                            <h3 class="card_title fs-xl fw-bold">Live recording of Mahler’s Symphony No. 8 with James</h3>
+                            <h3 class="card_title fs-xl fw-bold">Live recording of Mahler’s Symphony No. 8 with James
+                            </h3>
                             <p class="fs-base">Kolinberg Philharmonic and James' live recording of Mahler's Symphony No.
                                 8
                                 will be released by Decca Classics on 7 November 2025. Captured during the 2025 Mahler
@@ -116,7 +127,8 @@
                         </div>
                         <div class="news_content">
                             <span class="card_date">16 Oct. 2025</span>
-                            <h3 class="card_title fs-xl fw-bold">Live recording of Mahler’s Symphony No. 8 with James</h3>
+                            <h3 class="card_title fs-xl fw-bold">Live recording of Mahler’s Symphony No. 8 with James
+                            </h3>
                             <p class="fs-base">Kolinberg Philharmonic and James' live recording of Mahler's Symphony No.
                                 8
                                 will be released by Decca Classics on 7 November 2025. Captured during the 2025 Mahler
@@ -133,10 +145,13 @@
         <div class="container">
             <div class="text col-4">
                 <h2 class="fs-3xl fw-bold">Webshop</h2>
-                <p class="description fs-md">Browse and purchase exclusive merchandise, including our latest recordings, video
+                <p class="description fs-md">Browse and purchase exclusive merchandise, including our latest recordings,
+                    video
                     releases, and a curated selection of official collaboration items to bring the joy of music home
                     with you.</p>
-                <a href="./product.html"><div class="btn fs-xl fw-semibold">View All</div></a>
+                <a href="./product.html">
+                    <div class="btn fs-xl fw-semibold">View All</div>
+                </a>
             </div>
             <div class="cardlist col-8">
                 <a href="./product_content.html">
@@ -179,7 +194,9 @@
         <div class="container">
             <div class="text col-12">
                 <h2 class="fs-3xl fw-bold">We Need Your Support!</h2>
-                <a href="./membership.html"><div class="btn fs-xl fw-semibold">Be Our Member</div></a>
+                <a href="./membership.html">
+                    <div class="btn fs-xl fw-semibold">Be Our Member</div>
+                </a>
             </div>
         </div>
     </section>
@@ -188,7 +205,8 @@
         <div class="container">
             <div class="text col-6">
                 <h2 class="fs-3xl fw-bold">Newsletter</h2>
-                <p class="fs-md">Subscribe to the Kolinberg Philharmonic newsletter to receive the latest performance updates and enjoy exclusive content.</p>
+                <p class="fs-md">Subscribe to the Kolinberg Philharmonic newsletter to receive the latest performance
+                    updates and enjoy exclusive content.</p>
             </div>
 
             <form class="email col-6" id="email_sub_form" method="POST">
@@ -237,6 +255,38 @@
             </div>
         </div>
     </footer>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.querySelector("header .hamburger");
+    const nav = document.querySelector("header nav");
+
+    hamburger.addEventListener("click", function() {
+        // 切換 class "active"
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("active");
+    });
+
+    // (選用) 點擊連結後自動收起選單
+    document.querySelectorAll("header nav li a").forEach(link => {
+        link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            nav.classList.remove("active");
+        });
+    });
+});
+
+</script>
+
+
+
+
+
+
+    
 </body>
 
 </html>

@@ -273,15 +273,14 @@
         <div class="container">
             <div class="text col-6">
                 <h2 class="fs-3xl fw-bold">Newsletter</h2>
-                <p class="fs-lg">Subscribe to the Kolinberg Philharmonic newsletter to receive the latest performance
-                    updates and enjoy exclusive content.</p>
+                <p class="fs-md">Subscribe to the Kolinberg Philharmonic newsletter to receive the latest performance updates and enjoy exclusive content.</p>
             </div>
-            <div class="email col-6">
-                <div class="input_email">
-                    <input type="email" placeholder="Email address">
-                </div>
-                <div class="submit_btn">Submit</div>
-            </div>
+
+            <form class="email col-6" id="email_sub_form" method="POST">
+                <input type="email" id="email" name="email" placeholder="Email address">
+                <button class="submit_btn" type="submit">Submit</button>
+            </form>
+
         </div>
     </section>
     <footer>

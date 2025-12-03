@@ -169,25 +169,20 @@ h1 {
     padding: 5% 5% 5% 7%;
 }
 
-.campaign .text h2 {
-    padding: 0 0 0 0;
-}
-
-.campaign .text p {
-    padding: 0 0 20px 0;
-}
 
 .campaign .text span.date {
-    font-size: var(--fs-md);
-    font-weight: var(--fw-bold);
-    line-height: var(--lh-base);
-    letter-spacing: var(--ls-base);
     display: block;
     box-sizing: border-box;
     border-bottom: 1px solid var(--c-text-main);
     width: fit-content;
     margin: 15px 0;
 }
+
+.campaign .text p {
+    padding: 0 0 20px 0;
+}
+
+
 
 
 .program_button {
@@ -248,7 +243,6 @@ h1 {
     flex-grow: 1;
     flex-shrink: 1;
     text-decoration: none;
-
 }
 
 .news_card {
@@ -491,3 +485,102 @@ h3.card_title {
     color: var(--c-primary);
     transition: .2s;
 }
+
+
+
+
+/* ==============RWD=============== */
+@media screen and (max-width: 1200px) {
+    .campaign .text h2 {
+        font-size: var(--fs-2xl-rwd-smaller);
+    }
+}
+
+@media screen and (max-width: 920px) {
+
+    .campaign .card {
+        background-color: var(--c-bg-primary-alpha);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+    }
+
+    .campaign .col-6 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .campaign .text {
+        padding-bottom: 3%;
+    }
+
+    .wrap {
+        gap: 0;
+    }
+
+    .news .wrap a {
+        flex-basis: 100%;
+    }
+
+    .webshop .col-4,
+    .webshop .col-8 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .webshop .text{
+        padding: 10% 0 7%;
+    }
+
+    .webshop .text h2{
+        text-align: center;
+    }
+
+    .webshop .cardtext h3{
+        font-size: var(--fs-lg);
+    }
+
+    .webshop .text a{
+        margin: 0 auto;
+    }
+
+    .webshop .cardlist{
+        padding-bottom: 10%;
+    }
+
+    .newsletter .col-6{
+        width: 100%;
+        padding: 0;
+    }
+
+    .newsletter .container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .newsletter {    
+    padding: 100px 0;
+}
+
+.newsletter .text{
+    padding-bottom: 50px;
+}
+}
+
+
+    /* @media screen and (max-width: 768px) {
+        .container {
+            flex-direction: column; 或是把橫排改成直排
+        }
+
+        通常在這裡會把漢堡選單叫出來
+    } */
+
+    /* @media screen and (max-width: 576px) {
+        body {
+            font-size: 14px;
+        }
+
+        針對手機版面做最後的優化
+    } */
