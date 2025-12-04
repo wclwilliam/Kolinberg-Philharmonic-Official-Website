@@ -1068,7 +1068,7 @@ footer .copyright {
 
 
     header nav {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -100%;
         width: 100%;
@@ -1082,7 +1082,7 @@ footer .copyright {
         grid-template-rows: repeat(5, 1fr);
         grid-template-columns: none;
         height: 60svh;
-        position: fixed;
+        position: absolute;
         top: 20%;
     }
 
