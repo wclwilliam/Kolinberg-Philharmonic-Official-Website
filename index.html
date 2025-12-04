@@ -258,34 +258,7 @@
 
 
 
-<script>
-
-document.addEventListener("DOMContentLoaded", function() {
-    const hamburger = document.querySelector("header .hamburger");
-    const nav = document.querySelector("header nav");
-
-    hamburger.addEventListener("click", function() {
-        // 切換 class "active"
-        hamburger.classList.toggle("active");
-        nav.classList.toggle("active");
-    });
-
-    // (選用) 點擊連結後自動收起選單
-    document.querySelectorAll("header nav li a").forEach(link => {
-        link.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            nav.classList.remove("active");
-        });
-    });
-});
-
-</script>
-
-
-
-
-
-
+<script src="./js/general.js"></script>
     
 </body>
 

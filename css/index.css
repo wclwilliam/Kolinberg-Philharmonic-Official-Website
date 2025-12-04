@@ -106,6 +106,7 @@ h1 {
     font-size: clamp(var(--fs-lg), 1.67vw, var(--fs-2xl));
     font-weight: var(--fw-semibold);
     background-color: var(--c-bg-brown-alpha);
+    white-space: nowrap;
     box-sizing: border-box;
     line-height: 1;
     letter-spacing: var(--ls-base);
@@ -521,6 +522,15 @@ h3.card_title {
 
     .news .wrap a {
         flex-basis: 100%;
+        margin: 30px 0;
+    }
+
+    .news .wrap a:nth-child(1) {
+        transform: translate(0, 0);
+    }
+
+    .news .wrap a:nth-child(3) {
+        transform: translate(0, 0);
     }
 
     .webshop .col-4,
@@ -529,58 +539,105 @@ h3.card_title {
         padding: 0;
     }
 
-    .webshop .text{
+    .webshop .text {
         padding: 10% 0 7%;
     }
 
-    .webshop .text h2{
+    .webshop .text h2 {
         text-align: center;
     }
 
-    .webshop .cardtext h3{
+    .webshop .cardtext h3 {
         font-size: var(--fs-lg);
     }
 
-    .webshop .text a{
+    .webshop .text a {
         margin: 0 auto;
     }
 
-    .webshop .cardlist{
+    .webshop .cardlist {
         padding-bottom: 10%;
     }
 
-    .newsletter .col-6{
+    .newsletter .col-6 {
         width: 100%;
         padding: 0;
     }
 
-    .newsletter .container{
+    .newsletter .container {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .newsletter {    
-    padding: 100px 0;
+    .newsletter {
+        padding: 100px 0;
+    }
+
+    .newsletter .text {
+        padding-bottom: 50px;
+    }
 }
 
-.newsletter .text{
-    padding-bottom: 50px;
+
+@media screen and (max-width: 768px) {
+    .hero_title {
+        white-space: wrap;
+        text-align: center;
+    }
+
+    .hero_title h1::after {
+        content: "";
+        width: 90%;
+        height: 0.5em;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        transform: translateX(-50%);
+        background-color: var(--c-text-main);
+        opacity: 50%;
+        z-index: -1;
+    }
+
+
+    .support .text h2::after {
+        max-width: 95vw;
+    }
 }
+
+@media screen and (max-width: 576px) {
+
+    .hero {
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+
+    .hero_title h1::before {
+        max-width: 95vw;
+    }
+
+    .hero_title h1::after {
+        max-width: 95vw;
+    }
+
+    .calendar_button {
+        top: 65%;
+    }
+
+    .campaign {
+        padding-top: 70px;
+    }
+
+    .campaign .card .text h2.fs-2xl {
+        font-size: var(--fs-xl);
+    }
+
+    .campaign .card .text p.fs-md {
+        font-size: var(--fs-base);
+    }
+
+    .news{
+        margin-top: 40px;
+    }
+
 }
-
-
-    /* @media screen and (max-width: 768px) {
-        .container {
-            flex-direction: column; 或是把橫排改成直排
-        }
-
-        通常在這裡會把漢堡選單叫出來
-    } */
-
-    /* @media screen and (max-width: 576px) {
-        body {
-            font-size: 14px;
-        }
-
-        針對手機版面做最後的優化
-    } */
