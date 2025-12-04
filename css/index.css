@@ -607,9 +607,9 @@ h3.card_title {
 @media screen and (max-width: 576px) {
 
     .hero {
-        height: 100vh;
-        min-height: 100vh;
-        max-height: 100vh;
+        height: 100svh;
+        min-height: 100svh;
+        max-height: 100svh;
     }
 
     .hero_title h1::before {
