@@ -1137,6 +1137,14 @@ footer .copyright {
 }
 
 @media screen and (max-width: 576px) {
+    .newsletter .email {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
     footer .contact_info {
         grid-row: 4/5;
         grid-column: 1/13;
