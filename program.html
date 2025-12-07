@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/grid.css">
     <link rel="stylesheet" href="./css/general_text_setting.css">
     <link rel="stylesheet" href="./css/program.css">
+    <script src="./js/general.js" defer></script>
     <script src="./js/program.js" defer></script>
 </head>
 
@@ -37,6 +38,11 @@
             <i class="fa-solid fa-bell"></i>
             <i class="fa-solid fa-user"></i>
         </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
     <section class="banner">
         <h2 class="banner_title">Program</h2>
@@ -52,12 +58,14 @@
                 </form>
             </div>
             <div class="filter_area">
-                <button id="reset_all_btn" class="reset_btn text-secondary fs-base fw-medium">
-                    <i class="fa-solid fa-rotate-right"></i> Reset All
-                </button>
-
                 <button id="filter_toggle_btn" class="filter_btn filter_toggle_btn">
                     <i class="fa-solid fa-filter"></i> Filter Options
+                </button>
+                <button id="date_toggle_btn" class="filter_btn date_toggle_btn">
+                    <i class="fa-solid fa-calendar-days"></i> Select Date
+                </button>
+                <button id="reset_all_btn" class="reset_btn text-main fs-base fw-medium ">
+                    <i class="fa-solid fa-rotate-right"></i> Reset All
                 </button>
 
                 <div id="filter_dropdown" class="filter_dropdown hidden">

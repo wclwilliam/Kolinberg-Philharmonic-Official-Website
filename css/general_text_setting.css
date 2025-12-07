@@ -560,7 +560,6 @@ data.price {
     line-height: 1;
     cursor: pointer;
     margin-right: 15px;
-    border-radius: 10px;
     transition: .3s;
 }
 
@@ -576,31 +575,42 @@ data.price {
 /* 搜尋通用設定 */
 
 .search_area {
-    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+/* 新增：針對 form 標籤進行 Flex 排版 */
+.search_area form {
+    display: flex;           /* 讓內部的 input 和 button 變成並排 */
+    flex-wrap: nowrap;       /* 強制不換行 */
+    align-items: stretch;    /* 讓兩者高度強制拉伸對齊 (解決高度差最有效的方法) */
+    width: 100%;             /* 寬度佔滿容器 */
+    max-width: 700px;        /* 設定一個最大寬度，避免在大螢幕太寬 (原本input 588 + btn 約 100) */
 }
 
 .searchbar {
-    width: 588px;
+    /* width: 588px;  <-- 移除固定寬度 */
+    width: 100%;      /* 設為 100% 配合 flex */
+    flex: 1;          /* 關鍵：讓它自動填滿剩餘空間，並隨螢幕縮小 */
+    min-width: 0;     /* 防止在極小螢幕下溢出 */
+    
     height: 53px;
     box-sizing: border-box;
     border: 1.5px solid var(--c-primary);
-    /* #CCA455 */
-    border-radius: 10px;
-    padding: 10px 15px;
-    font-size: var(--fs-base);
-    /* 16px */
-    font-weight: var(--fw-regular);
-    /* 400 */
-    letter-spacing: var(--ls-base);
-    /* 0.05em */
     padding: 0 15px;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-regular);
+    letter-spacing: var(--ls-base);
     font-family: var(--font-main);
-    /* "Fira Sans", sans-serif */
+    
+    /* 修正高度差的小細節：移除預設樣式影響 */
+    appearance: none; 
+    -webkit-appearance: none;
 }
 
 .searchbar:focus {
     outline: 1.5px solid var(--c-primary);
-    /* #CCA455 */
 }
 
 .search_submit_btn {
@@ -608,30 +618,28 @@ data.price {
     height: 53px;
     box-sizing: border-box;
     font-family: var(--font-main);
-    /* "Fira Sans", sans-serif */
     font-size: var(--fs-lg);
-    /* 20px */
     letter-spacing: var(--ls-base);
     cursor: pointer;
     color: var(--c-primary);
-    /* #CCA455 */
     font-weight: var(--fw-medium);
-    /* 500 */
-    box-sizing: border-box;
-    line-height: 1;
+    
+    /* line-height: 1; <-- 建議移除或改成 normal，讓 Flexbox 控制垂直置中 */
+    
     border: 1.5px solid var(--c-primary);
-    /* #CCA455 */
-    border-radius: 10px;
     padding: 0 16px;
-    margin-left: 20px;
+    
+    margin-left: 20px; /* 保持間距 */
     transition: .3s;
+
+    /* 關鍵：防止按鈕被擠扁 */
+    flex-shrink: 0; 
+    white-space: nowrap; /* 防止文字換行 */
 }
 
 .search_submit_btn:hover {
     color: var(--c-text-white);
-    /* #fff */
     background-color: var(--c-primary);
-    /* #CCA455 */
     transition: .3s;
 }
 
@@ -639,7 +647,6 @@ data.price {
 /* ===========================漢堡 全頁面適用=========================== */
 .hamburger {
     display: none;
-
 }
 
 /* ===========================漢堡 全頁面適用=========================== */
@@ -728,8 +735,7 @@ header .function_list>i {
 
 body.general .banner {
     width: 100%;
-    aspect-ratio: 16 / 2;
-    max-height: 280px;
+    height: 280px;
     background-color: #A290784D;
     display: flex;
     align-items: center;
@@ -737,11 +743,11 @@ body.general .banner {
 
 
 body.general .banner_title {
-    font-family: "Outfit", sans-serif;
-    font-size: 60px;
-    font-weight: 900;
-    letter-spacing: 0.05em;
-    color: #181818;
+    font-family: var(--font-banner);
+    font-size: var(--fs-5xl);
+    font-weight: var(--fw-black);
+    letter-spacing: var(--ls-base);
+    color: var(--c-text-main);
     margin: auto;
 }
 
@@ -959,7 +965,13 @@ footer .copyright {
         padding-right: 5%;
     }
 
+    body.general .banner {
+        height: 200px;
+    }
 
+    body.general .banner_title {
+        font-size: var(--fs-4xl);
+    }
 
     header .logo a {
         width: 176px;
@@ -1042,6 +1054,10 @@ footer .copyright {
             opacity 0.25s ease-in-out 0.25s;
     }
 
+    body.general .hamburger span {
+        background-color: var(--c-text-main);
+    }
+
     .hamburger span:nth-child(1) {
         top: 0;
     }
@@ -1053,6 +1069,10 @@ footer .copyright {
 
     .hamburger span:nth-child(3) {
         bottom: 0;
+    }
+
+    body.general .hamburger.active span {
+        background-color: var(--c-text-light);
     }
 
     header .hamburger.active span:nth-child(1) {
@@ -1097,6 +1117,7 @@ footer .copyright {
         width: 100%;
         height: 100svh;
         background-color: #2c2312f5;
+        color: var(--c-text-white);
         z-index: 9;
         transition: right 0.4s ease-in-out;
     }
