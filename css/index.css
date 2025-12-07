@@ -240,7 +240,7 @@ h1 {
 
 .news {
     margin: 150px auto 0 auto;
-    padding-bottom: 120px;
+    padding-bottom: 250px;
 }
 
 .news h2 {
@@ -296,11 +296,11 @@ h3.card_title {
     transform: translate(0, 100px);
 }
 
-.news .wrap a .news_card:hover {
+/* .news .wrap a .news_card:hover {
     scale: 1.02;
     box-shadow: -4px 4px 10px 0 var(--c-shadow-card);
     transition: .2s;
-}
+} */
 
 /* ===========================首頁 news setting=========================== */
 

@@ -697,7 +697,8 @@ header .logo img {
 }
 
 header nav {
-    grid-column: 6/11;
+    grid-column: 9/12;
+    /* grid-column: 6/11; */
     display: flex;
     align-items: center;
 }
@@ -708,7 +709,8 @@ header nav {
     margin: 0;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(5, 1fr); */
     column-gap: 20px;
 }
 
@@ -943,7 +945,8 @@ footer .contact_info p {
 }
 
 footer nav {
-    grid-column: 8/13;
+    grid-column: 9/12;
+    /* grid-column: 8/13; */
     display: flex;
     align-items: center;
 }
@@ -965,6 +968,17 @@ footer .copyright {
 
 /* ===========================footer setting=========================== */
 
+a.disabled {
+    /* 關鍵屬性：讓滑鼠事件失效（無法點擊、hover無效） */
+    pointer-events: none;
+    
+    /* 關鍵屬性：讓游標保持原本的箭頭，不要變成手指 */
+    cursor: default; 
+
+    /* 選用：確保沒有連結的底線或變色 */
+    text-decoration: none;
+    color: inherit;
+}
 
 
 
@@ -989,11 +1003,13 @@ footer .copyright {
     }
 
     header nav {
-        grid-column: 4/11;
+        /* grid-column: 4/11; */
+        grid-column: 6/11;
     }
 
     footer nav {
-        grid-column: 5/13;
+        /* grid-column: 5/13; */
+        grid-column: 6/11;
 
     }
 
@@ -1134,7 +1150,8 @@ footer .copyright {
     }
 
     header .nav_list {
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        /* grid-template-rows: repeat(5, 1fr); */
         grid-template-columns: none;
         height: 60svh;
         position: absolute;
@@ -1208,7 +1225,8 @@ footer .copyright {
 
     footer .nav_list {
         display: grid;
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        /* grid-template-rows: repeat(5, 1fr); */
         grid-template-columns: none;
         gap: 10px;
     }

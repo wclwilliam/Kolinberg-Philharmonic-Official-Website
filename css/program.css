@@ -17,6 +17,18 @@
     margin-right: 40px;
 }
 
+.program_link_wrapper {
+    display: block; /* 讓它佔滿空間 */
+    text-decoration: none; /* 移除底線 */
+    color: inherit; /* 繼承原本文字顏色 (避免變藍色) */
+    width: 100%; /* 確保寬度正確 */
+}
+
+/* 確保滑鼠移過去有手指游標 (雖然 a 標籤預設就有，但保險起見) */
+.program_link_wrapper:hover {
+    cursor: pointer;
+}
+
 .card_wrap .card:nth-last-child(1) {
     padding: 40px 0 0 0;
     border: none;
