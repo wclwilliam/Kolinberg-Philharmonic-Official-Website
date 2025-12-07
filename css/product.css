@@ -2,9 +2,11 @@
     background-image: url(../image/4_product/linear_btn_bg.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     margin-top: -100px;
-    padding-top: 100px;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
 
 }
 
@@ -20,45 +22,52 @@
 
 .banner_product h2.banner_title {
     margin: 0;
-    line-height: var(--lh-tight); /* 120% -> 1.2 */
+    line-height: var(--lh-tight);
+    /* 120% -> 1.2 */
 }
 
 .banner_product p {
-    color: var(--c-text-white); /* #fff */
+    color: var(--c-text-white);
+    /* #fff */
     padding-top: 60px;
-    padding-right: 180px;
+    padding-right: 20%;
 }
 
 .banner_product .pic {
-    padding: 50px 0 80px;
     position: relative;
+    width: 100%;
+    max-width: 710px;
+    height: 100%;
+    padding: 0;
+    margin-left: 10px;
 }
 
 .banner_product .pic::before {
     content: "";
-    width: 710px;
-    height: 710px;
-    border: 1px solid var(--c-primary); /* #CCA455 */
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--c-primary);
+    /* #CCA455 */
     position: absolute;
     left: 10px;
-    top: 50%;
-    transform: translateY(calc(-50% - 5px));
+    top: 10px;
 }
 
 .banner_product .pic::after {
     content: "";
-    width: 710px;
-    height: 710px;
-    border: 1px solid var(--c-primary); /* #CCA455 */
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--c-primary);
+    /* #CCA455 */
     position: absolute;
     left: -10px;
-    top: 50%;
-    transform: translateY(calc(-50% - 25px));
+    top: -10px;
 }
 
 
 .banner_product .pic img {
-    width: 710px;
+    width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -68,10 +77,128 @@
 
 }
 
-.product_cardlist .card{
+.product_cardlist .card {
     margin: 20px 0;
 }
 
-.product_cardlist.row{
+.product_cardlist.row {
     margin: 0 -10px;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    body.general .banner_title {
+        font-size: var(--fs-4xl);
+    }
+
+    .banner_product .text .fs-lg {
+        font-size: var(--fs-md);
+    }
+
+    .banner_product .text.col-6 {
+        width: 50%;
+    }
+
+    .banner_product .pic.col-6 {
+        width: 50%;
+    }
+
+
+}
+
+@media screen and (max-width: 920px) {
+
+    .col-3 {
+        width: 33.333333%;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .col-3 {
+        width: 50%;
+    }
+
+    .banner_product .text .fs-lg {
+        font-size: var(--fs-base);
+    }
+
+    /* [新增] 針對說明文字的重置設定 */
+    .product_cardlist .product_description.hovershow {
+        /* 1. 取消絕對定位，讓它乖乖待在標題下面 */
+        position: static;
+        width: auto;
+        height: auto;
+        aspect-ratio: auto;
+        /* 取消固定比例 */
+
+        /* 2. 取消隱藏，直接顯示 */
+        opacity: 1;
+
+        /* 3. 取消黑色遮罩背景，改回深色文字 */
+        background-color: transparent;
+        color: var(--c-text-main);
+
+        /* 4. 調整間距與排版 */
+        margin-top: 15px;
+        /* 與標題的距離 */
+        display: block;
+        /* 取消 flex center */
+    }
+
+    /* 修正內文 padding (原本有左右 padding) */
+    .product_cardlist .product_description.hovershow p {
+        padding: 0;
+    }
+
+    .pic.col-6 {
+        align-self: center;
+    }
+
+    .cardinner h3.fs-xl{
+        font-size: var(--fs-lg);
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    /* .col-3 {
+        width: 100%;
+    } */
+
+    .banner_product .container{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+    }
+    .banner_product .container .text{
+
+        width: 100%;
+        padding: 0;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner_product .container .text h2{
+        text-align: center;
+    }
+
+    .banner_product .container .text p{
+        padding: 0;
+    }
+
+    body.general .banner_title {
+        font-size: var(--fs-4xl);
+    }
+
+    .banner_product .pic.col-6 {
+        width: 70%;
+    }
+
+
 }
