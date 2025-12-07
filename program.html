@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/grid.css">
     <link rel="stylesheet" href="./css/general_text_setting.css">
     <link rel="stylesheet" href="./css/program.css">
+    <script src="./js/program.js" defer></script>
 </head>
 
 <body class="general">
@@ -51,15 +52,43 @@
                 </form>
             </div>
             <div class="filter_area">
-                <button class="filter_btn" data-filter="location_filter">Location Filter</button>
-                <button class="filter_btn" data-filter="composer_filter">Composer Filter</button>
-                <button class="filter_btn" data-filter="direction_filter">Director Filter</button>
+                <button id="reset_all_btn" class="reset_btn text-secondary fs-base fw-medium">
+                    <i class="fa-solid fa-rotate-right"></i> Reset All
+                </button>
+
+                <button id="filter_toggle_btn" class="filter_btn filter_toggle_btn">
+                    <i class="fa-solid fa-filter"></i> Filter Options
+                </button>
+
+                <div id="filter_dropdown" class="filter_dropdown hidden">
+                    <div class="filter_header">
+                        <h4 class="fs-base fw-bold text-main">Select Filters</h4>
+                        <button id="clear_options_btn" class="clear_btn fs-sm text-secondary">Clear Selection</button>
+                    </div>
+
+                    <div class="filter_body">
+                        <div class="filter_group">
+                            <h5 class="group_title fs-sm fw-bold">Composer</h5>
+                            <div class="checkbox_list" id="filter_composer_list"></div>
+                        </div>
+
+                        <div class="filter_group">
+                            <h5 class="group_title fs-sm fw-bold">Director</h5>
+                            <div class="checkbox_list" id="filter_director_list"></div>
+                        </div>
+
+                        <div class="filter_group">
+                            <h5 class="group_title fs-sm fw-bold">City</h5>
+                            <div class="checkbox_list" id="filter_location_list"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="program row">
-            <div class="card_wrap col-9">
-                <div class="card">
+            <div class="card_wrap col-9" id="program_container">
+                <!-- <div class="card">
                     <div class="pic col-5"><img src="./image/2_program/program_467_309.jpg" alt="">
                     </div>
                     <div class="content col-7">
@@ -79,173 +108,41 @@
                             of
                             the Night," James leads the Kolinberg Philharmonic in this colossal opus.</p>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="pic col-5"><img src="./image/2_program/program_467_309.jpg" alt="">
-                    </div>
-                    <div class="content col-7">
-                        <h3 class="fs-xl fw-bold">James Conducts Mahler's Seventh</h3>
-                        <div class="location_time">
-                            <div class="location">
-                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <span class="text fs-base">Kolinberg Concert Hall (Berlin, Germany)</span>
-                            </div>
-                            <div class="time">
-                                <div class="icon"><i class="fa-solid fa-clock"></i></div>
-                                <span class="text fs-base">15 OCT. 2025 / 19:30</span>
-                            </div>
-                        </div>
-                        <p class="fs-base">James calls Mahler’s Seventh a “cosmic symphony,” moving from chaos to glory.
-                            Known as the "Song
-                            of
-                            the Night," James leads the Kolinberg Philharmonic in this colossal opus.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="pic col-5"><img src="./image/2_program/program_467_309.jpg" alt="">
-                    </div>
-                    <div class="content  col-7">
-                        <h3 class="fs-xl fw-bold">James Conducts Mahler's Seventh</h3>
-                        <div class="location_time">
-                            <div class="location">
-                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <span class="text fs-base">Kolinberg Concert Hall (Berlin, Germany)</span>
-                            </div>
-                            <div class="time">
-                                <div class="icon"><i class="fa-solid fa-clock"></i></div>
-                                <span class="text fs-base">15 OCT. 2025 / 19:30</span>
-                            </div>
-                        </div>
-                        <p class="fs-base">James calls Mahler’s Seventh a “cosmic symphony,” moving from chaos to glory.
-                            Known as the "Song
-                            of
-                            the Night," James leads the Kolinberg Philharmonic in this colossal opus.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="pic col-5"><img src="./image/2_program/program_467_309.jpg" alt="">
-                    </div>
-                    <div class="content  col-7">
-                        <h3 class="fs-xl fw-bold">James Conducts Mahler's Seventh</h3>
-                        <div class="location_time">
-                            <div class="location">
-                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <span class="text fs-base">Kolinberg Concert Hall (Berlin, Germany)</span>
-                            </div>
-                            <div class="time">
-                                <div class="icon"><i class="fa-solid fa-clock"></i></div>
-                                <span class="text fs-base">15 OCT. 2025 / 19:30</span>
-                            </div>
-                        </div>
-                        <p class="fs-base">James calls Mahler’s Seventh a “cosmic symphony,” moving from chaos to glory.
-                            Known as the "Song
-                            of
-                            the Night," James leads the Kolinberg Philharmonic in this colossal opus.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="pic col-5"><img src="./image/2_program/program_467_309.jpg" alt="">
-                    </div>
-                    <div class="content  col-7">
-                        <h3 class="fs-xl fw-bold">James Conducts Mahler's Seventh</h3>
-                        <div class="location_time">
-                            <div class="location">
-                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <span class="text fs-base">Kolinberg Concert Hall (Berlin, Germany)</span>
-                            </div>
-                            <div class="time">
-                                <div class="icon"><i class="fa-solid fa-clock"></i></div>
-                                <span class="text fs-base">15 OCT. 2025 / 19:30</span>
-                            </div>
-                        </div>
-                        <p class="fs-base">James calls Mahler’s Seventh a “cosmic symphony,” moving from chaos to glory.
-                            Known as the "Song
-                            of
-                            the Night," James leads the Kolinberg Philharmonic in this colossal opus.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="pic col-5"><img src="./image/2_program/program_467_309.jpg" alt="">
-                    </div>
-                    <div class="content col-7">
-                        <h3 class="fs-xl fw-bold">James Conducts Mahler's Seventh</h3>
-                        <div class="location_time">
-                            <div class="location">
-                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                <span class="text fs-base">Kolinberg Concert Hall (Berlin, Germany)</span>
-                            </div>
-                            <div class="time">
-                                <div class="icon"><i class="fa-solid fa-clock"></i></div>
-                                <span class="text fs-base">15 OCT. 2025 / 19:30</span>
-                            </div>
-                        </div>
-                        <p class="fs-base">James calls Mahler’s Seventh a “cosmic symphony,” moving from chaos to glory.
-                            Known as the "Song
-                            of
-                            the Night," James leads the Kolinberg Philharmonic in this colossal opus.</p>
-                    </div>
-                </div>
+                </div> -->
             </div>
             <div class="program_calender col-3">
                 <div class="calendar_widget">
                     <div class="calendar_header">
-                        <button class="previous_btn" type="button" aria-label="Previous Month"><i
-                                class="fa-solid fa-chevron-left"></i></button>
-                        <span class="month_title fs-lg">JUN 2025</span>
-                        <button class="next_btn" type="button" aria-label="Next Month"><i
-                                class="fa-solid fa-chevron-right"></i></button>
+                        <button class="previous_btn" type="button" id="previous_month_btn">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <span class="month_title fs-lg" id="calendar_title"></span>
+                        <button class="next_btn" type="button" id="next_month_btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
 
                     <div class="weekday_header">
                         <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
                     </div>
 
-                    <div class="date_grid">
-                        <div class="date_cell">1</div>
-                        <div class="date_cell">2</div>
-                        <div class="date_cell highlight">3</div>
-                        <div class="date_cell">4</div>
-                        <div class="date_cell highlight">5</div>
-                        <div class="date_cell">6</div>
-                        <div class="date_cell">7</div>
-                        <div class="date_cell highlight">8</div>
-                        <div class="date_cell">9</div>
-                        <div class="date_cell">10</div>
-                        <div class="date_cell highlight">11</div>
-                        <div class="date_cell">12</div>
-                        <div class="date_cell">13</div>
-                        <div class="date_cell">14</div>
-                        <div class="date_cell highlight">15</div>
-                        <div class="date_cell">16</div>
-                        <div class="date_cell">17</div>
-                        <div class="date_cell highlight selected ">18</div>
-                        <div class="date_cell">19</div>
-                        <div class="date_cell">20</div>
-                        <div class="date_cell">21</div>
-                        <div class="date_cell">22</div>
-                        <div class="date_cell">23</div>
-                        <div class="date_cell">24</div>
-                        <div class="date_cell">25</div>
-                        <div class="date_cell">26</div>
-                        <div class="date_cell">27</div>
-                        <div class="date_cell">28</div>
-                        <div class="date_cell">29</div>
-                        <div class="date_cell">30</div>
-                        <div class="date_cell empty"></div>
-                        <div class="date_cell empty"></div>
-                        <div class="date_cell empty"></div>
-                        <div class="date_cell empty"></div>
-                        <div class="date_cell empty"></div>
+                    <div class="date_grid" id="date_grid">
+                    </div>
+
+                    <div class="calendar_footer">
+                        <button id="today_btn" class="today_btn fs-sm fw-bold text-primary">
+                            BACK TO TODAY
+                        </button>
                     </div>
                 </div>
             </div>
-            <nav class="pagination col-12">
-                <ul class="list">
-                    <li class="item"><a href="#" class="link_active">1</a></li>
+            <nav class="pagination col-12"">
+                <ul class=" list" id="pagination_container">
+                <!-- <li class="item"><a href="#" class="link_active">1</a></li>
                     <li class="item"><a href="#" class="link">2</a></li>
                     <li class="item"><a href="#" class="link">3</a></li>
                     <li class="item"><a href="#" class="link">4</a></li>
-                    <li class="item"><a href="#" class="link">5</a></li>
+                    <li class="item"><a href="#" class="link">5</a></li> -->
                 </ul>
             </nav>
         </div>
@@ -260,7 +157,8 @@
         <div class="container">
             <div class="text col-6">
                 <h2 class="fs-3xl fw-bold">Newsletter</h2>
-                <p class="fs-md">Subscribe to the Kolinberg Philharmonic newsletter to receive the latest performance updates and enjoy exclusive content.</p>
+                <p class="fs-md">Subscribe to the Kolinberg Philharmonic newsletter to receive the latest performance
+                    updates and enjoy exclusive content.</p>
             </div>
 
             <form class="email col-6" id="email_sub_form" method="POST">

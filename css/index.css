@@ -75,7 +75,7 @@ body.index header nav {
     display: inline-block;
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 60%;
     transform: translate(-50%, -50%);
     z-index: 2;
     white-space: nowrap;
@@ -87,6 +87,7 @@ h1 {
     font-size: var(--fs-hero);
     line-height: var(--lh-tight);
     letter-spacing: var(--ls-tight);
+    position: relative;
 }
 
 .hero_title h1::before {
@@ -102,6 +103,23 @@ h1 {
     z-index: -1;
 }
 
+/* .hero a{
+    position: absolute;
+    left: 50%;
+    bottom: -20svh;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+} */
+
+.hero a {
+    display: block;
+    margin: 100px auto 0;
+    width: fit-content;
+    height: fit-content;
+    z-index: 5;
+
+}
+
 .calendar_button {
     font-size: clamp(var(--fs-lg), 1.67vw, var(--fs-2xl));
     font-weight: var(--fw-semibold);
@@ -114,18 +132,13 @@ h1 {
     border: var(--c-primary) solid 1.5px;
     padding: 0.6em 1.8em;
     width: fit-content;
-    position: absolute;
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
     transition: .2s;
 }
 
 .calendar_button:hover {
     background-color: var(--c-bg-brown-alpha-hover);
     color: var(--c-text-strong);
-    transform: translate(-50%, -50%) scale(1.02);
+    transform: scale(1.02);
     transition: .2s;
 }
 
@@ -275,12 +288,12 @@ h3.card_title {
     padding: 15px 0;
 }
 
-.news .wrap a:nth-child(1) {
-    transform: translate(0, -50px);
+.news .wrap a:nth-child(2) {
+    transform: translate(0, 50px);
 }
 
 .news .wrap a:nth-child(3) {
-    transform: translate(0, 50px);
+    transform: translate(0, 100px);
 }
 
 .news .wrap a .news_card:hover {
@@ -295,6 +308,35 @@ h3.card_title {
 .webshop {
     background-color: var(--c-bg-warm);
     background-image: url(../image/0_index/black-thread-light.png);
+    --swiper-navigation-size: var(--fs-icon-28);
+    --swiper-navigation-color: var(--c-secondary);
+    --swiper-pagination-color: var(--c-secondary);
+}
+
+.webshop .swiper {
+    width: 80%;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.webshop .swiper-button-prev {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 3%;
+}
+
+.webshop .swiper-button-next {
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 3%;
+}
+
+.webshop .swiper-pagination {
+    position: relative;
+}
+
+.webshop .cardlist {
+    position: relative;
 }
 
 .webshop .text a {
@@ -304,7 +346,6 @@ h3.card_title {
 .webshop .cardlist a {
     text-decoration: none;
     width: 38%;
-    max-width: 345px;
     height: fit-content;
 }
 
@@ -346,7 +387,7 @@ h3.card_title {
 }
 
 .webshop .cardlist {
-    padding: 120px 0;
+    padding: 120px 0 120px;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -359,11 +400,11 @@ h3.card_title {
     transition: .2s;
 }
 
-.webshop .card:hover {
+/* .webshop .card:hover {
     box-shadow: -4px 4px 10px 0 var(--c-shadow-card);
     scale: 1.02;
     transition: .2s;
-}
+} */
 
 .webshop .card i {
     color: var(--c-text-white);
@@ -512,6 +553,14 @@ h3.card_title {
         max-height: 100svh;
     }
 
+    .campaign_to_news {
+        background-size: 100% 40%, 100% 60%;
+    }
+
+    .campaign.container{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
 
     .campaign .card {
         background-color: var(--c-bg-primary-alpha);
@@ -538,22 +587,50 @@ h3.card_title {
         font-size: var(--fs-base);
     }
 
+    .news .container{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+
+
     .news h2 {
         display: block;
         text-align: center;
+        margin-bottom: 50px;
 
     }
 
+    /* 修正容器 (Wrapper) */
     .news .wrap {
-        gap: 0;
+        /* 1. 關鍵！Swiper 必須靠左開始，不能置中 */
+        justify-content: flex-start !important;
+
+        /* 2. 移除 container 的 padding，讓軌道滿版，不然卡片會被擠壓 */
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        /* 3. 確保不換行 */
+        flex-wrap: nowrap !important;
+
+        /* 4. 移除間距，改用 JS 的 spaceBetween 控制 */
+        gap: 0 !important;
     }
 
+    /* 修正卡片 (Slide) */
     .news .wrap a {
-        flex-basis: 100%;
-        margin: 30px 0;
+        /* 1. 讓卡片寬度聽從 Swiper JS 的計算 */
+        width: 100% !important;
+
+        /* 2. 絕對不能縮小！這是導致你截圖中卡片變細的主因 */
+        flex-shrink: 0 !important;
+        flex-basis: auto;
+
+        /* 3. 變成區塊元素 */
+        display: block !important;
     }
 
-    .news .wrap a:nth-child(1) {
+    .news .wrap a:nth-child(2) {
         transform: translate(0, 0);
     }
 
@@ -567,6 +644,11 @@ h3.card_title {
         width: 100%;
         padding: 0;
     }
+
+    /* .webshop .swiper-button-prev,
+    .webshop .swiper-button-next {
+        top: 40%;
+    } */
 
     .webshop .text {
         padding: 10% 0 7%;
@@ -627,6 +709,16 @@ h3.card_title {
         z-index: -1;
     }
 
+    .campaign.container{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .news .container{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
 
     .support .text h2::after {
         max-width: 95vw;
@@ -644,9 +736,6 @@ h3.card_title {
         max-width: 95vw;
     }
 
-    .calendar_button {
-        top: 65%;
-    }
 
     .campaign {
         padding-top: 70px;
@@ -660,7 +749,7 @@ h3.card_title {
         font-size: var(--fs-base);
     }
 
-    .campaign .card .text a{
+    .campaign .card .text a {
         align-self: center;
     }
 
@@ -697,5 +786,6 @@ h3.card_title {
         text-align: center;
         width: 70vw;
     }
+
 
 }
