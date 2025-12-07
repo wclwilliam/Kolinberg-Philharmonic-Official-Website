@@ -165,9 +165,13 @@
 
 @media screen and (max-width: 576px) {
 
-    /* .col-3 {
-        width: 100%;
-    } */
+    .product_cardlist.row{
+        justify-content: center;
+    }
+
+    .col-3 {
+        width: 80%;
+    }
 
     .banner_product .container{
         flex-direction: column-reverse;
