@@ -2,44 +2,51 @@
 
 body.about header .function_list>i {
     /* about專屬淺色 */
-    color: var(--c-text-light); /* #dadada */
+    color: var(--c-text-light);
+    /* #dadada */
 }
 
 body.about header nav {
     /* about專屬淺色 */
-    color: var(--c-text-light); /* #dadada */
+    color: var(--c-text-light);
+    /* #dadada */
 }
 
 body.about {
-    background-color: var(--c-secondary); /* #001F3F */
+    background-color: var(--c-secondary);
+    /* #001F3F */
     background-image: url(../image/1_about/linear_top.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 100% 180px
-
 }
 
 .story p,
-.history .discription .text p {
-    color: var(--c-text-light); /* #dadada */
+.history .description .text p {
+    color: var(--c-text-light);
+    /* #dadada */
 }
 
 .history .timeline li.future {
-    color: var(--c-text-white); /* #fff */
+    color: var(--c-text-white);
+    /* #fff */
 }
 
 .history .timeline li.current {
-    color: var(--c-secondary); /* #001F3F */
+    color: var(--c-secondary);
+    /* #001F3F */
 }
 
 .history .timeline li.past {
-    color: var(--c-text-main); /* #181818 */
+    color: var(--c-text-main);
+    /* #181818 */
 }
 
 .story h2,
 .history h2,
-.history .discription .text span {
-    color: var(--c-primary); /* #CCA455 */
+.history .description .text span {
+    color: var(--c-primary);
+    /* #CCA455 */
 }
 
 body.about .banner {
@@ -49,18 +56,23 @@ body.about .banner {
 
 
 body.about .banner_title {
-    font-family: var(--font-banner); /* "Outfit", sans-serif */
-    font-size: var(--fs-5xl); /* 78px */
-    font-weight: var(--fw-black); /* 900 */
-    letter-spacing: var(--ls-base); /* 0.05em */
-    color: var(--c-text-light); /* #dadada */
+    font-family: var(--font-banner);
+    /* "Outfit", sans-serif */
+    font-size: var(--fs-5xl);
+    font-weight: var(--fw-black);
+    /* 900 */
+    letter-spacing: var(--ls-base);
+    /* 0.05em */
+    color: var(--c-text-light);
+    /* #dadada */
     margin: auto;
 }
 
 .story {
     display: flex;
-    padding-top: 90px;
-    padding-bottom: 270px;
+    padding-top: 10%;
+    padding-bottom: 15%;
+    align-items: center;
 }
 
 .story .text {
@@ -78,6 +90,8 @@ body.about .banner_title {
 .story .pic {
     position: relative;
     padding: 0;
+    width: fit-content;
+    height: fit-content;
 }
 
 .story .pic::before {
@@ -85,9 +99,10 @@ body.about .banner_title {
     position: absolute;
     left: -10px;
     top: -10px;
-    width: 710px;
-    height: 470px;
-    border: 1px solid var(--c-primary); /* #CCA455 */
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--c-primary);
+    /* #CCA455 */
 }
 
 .story .pic::after {
@@ -95,9 +110,10 @@ body.about .banner_title {
     position: absolute;
     left: 10px;
     top: 10px;
-    width: 710px;
-    height: 470px;
-    border: 1px solid var(--c-primary); /* #CCA455 */
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--c-primary);
+    /* #CCA455 */
 }
 
 .history h2 {
@@ -119,7 +135,8 @@ ol::before {
     width: 100%;
     height: 1px;
     position: absolute;
-    background-color: var(--c-primary); /* #CCA455 */
+    background-color: var(--c-primary);
+    /* #CCA455 */
     top: 50%;
     z-index: -1;
 }
@@ -139,8 +156,10 @@ ol::before {
     right: 3%;
     width: 8px;
     height: 8px;
-    border-top: 2px solid var(--c-primary); /* #CCA455 */
-    border-left: 2px solid var(--c-primary); /* #CCA455 */
+    border-top: 2px solid var(--c-primary);
+    /* #CCA455 */
+    border-left: 2px solid var(--c-primary);
+    /* #CCA455 */
     transform: translateY(-50%) rotate(135deg) skew(15deg, 15deg);
 }
 
@@ -151,12 +170,66 @@ ol::before {
     right: 3.7%;
     width: 8px;
     height: 8px;
-    border-top: 2px solid var(--c-primary); /* #CCA455 */
-    border-left: 2px solid var(--c-primary); /* #CCA455 */
+    border-top: 2px solid var(--c-primary);
+    /* #CCA455 */
+    border-left: 2px solid var(--c-primary);
+    /* #CCA455 */
     transform: translateY(-50%) rotate(135deg) skew(15deg, 15deg);
 }
 
 
+/* =========================================
+   1. 偽元素 (雙圈) 的基礎結構 (不管是不是 current 都要先定義好)
+   ========================================= */
+ol li::before,
+ol li::after {
+    content: "";
+    /* 必須要有 content，偽元素才會存在 */
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    border: 2px solid var(--c-text-light);
+    /* #dadada */
+    border-radius: 100%;
+
+    /* 讓裝飾圈圈不影響滑鼠點擊 */
+    pointer-events: none;
+
+    /* === 動畫初始狀態 (隱藏) === */
+    opacity: 0;
+    transform: scale(0.8);
+    /* 稍微縮小，等等放大出來 */
+
+    /* 設定誰要動畫 */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* 個別定位 */
+ol li::before {
+    left: -5px;
+    top: -5px;
+}
+
+ol li::after {
+    left: 5px;
+    top: 5px;
+}
+
+/* =========================================
+   2. Current 狀態下的變化 (觸發動畫)
+   ========================================= */
+ol li.current::before,
+ol li.current::after {
+    opacity: 1;
+    /* 慢慢浮現 */
+    transform: scale(1);
+    /* 慢慢變回正常大小 */
+}
+
+/* =========================================
+   3. Li 本體的設定 (你原本寫得很好，這裡保留)
+   ========================================= */
 ol li {
     width: 80px;
     height: 80px;
@@ -164,134 +237,393 @@ ol li {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: var(--fs-lg); /* 20px */
-    line-height: var(--lh-tight); /* 120% -> 1.2 */
-    letter-spacing: var(--ls-base); /* 0.05em */
-    font-weight: var(--fw-bold); /* 700 */
+    font-size: var(--fs-lg);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-base);
+    font-weight: var(--fw-bold);
 
+    /* 確保文字與背景色有過渡 */
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+
+    /* 確保層級比偽元素高 (這樣才按得到按鈕) */
+    position: relative;
+    z-index: 10;
+
+    /* ========== 新增以下這幾行來修復抖動 ========== */
+
+    /* 1. 告訴瀏覽器這個元素即將變形，請提前準備好優化圖層 */
+    will-change: transform;
+
+    /* 2. 強制開啟硬體加速 (GPU)，避免動畫結束時切換回 CPU 渲染導致的跳動 */
+    transform: translateZ(0);
+
+    /* 3. 防止背面渲染閃爍 (這是 Safari/Chrome 的老牌修復技) */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    /* 4. (選用) 如果上面無效，這行可以強制讓字體抗鋸齒平滑化，減少計算差異 */
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 ol li.past {
-    background-color: var(--c-bg-gray); /* #7f7f7f */
-}
-
-ol li.current {
-    background-color: var(--c-text-light); /* #dadada */
-    position: relative;
-}
-
-ol li.current::before {
-    content: "";
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    box-sizing: border-box;
-    border: 2px solid var(--c-text-light); /* #dadada */
-    border-radius: 100%;
-    left: -5px;
-    top: -5px;
-}
-
-ol li.current::after {
-    content: "";
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    box-sizing: border-box;
-    border: 2px solid var(--c-text-light); /* #dadada */
-    border-radius: 100%;
-    left: 5px;
-    top: 5px;
+    background-color: var(--c-bg-gray);
+    /* 確保過去的狀態沒有陰影與放大 */
+    transform: scale(1);
+    box-shadow: none;
 }
 
 ol li.future {
-    background-color: var(--c-primary); /* #CCA455 */
+    background-color: var(--c-primary);
+    /* 確保未來的狀態沒有陰影與放大 */
+    transform: scale(1);
+    box-shadow: none;
+}
+
+ol li.current {
+    background-color: var(--c-text-light);
+
+    /* 稍微放大 1.15 倍，產生「跳出來」的視覺焦點 */
+    transform: scale(1.15);
+    /* 加一點陰影讓它浮起來 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.swiper {
+    margin: 10% 0 20%;
+    --swiper-navigation-size: var(--fs-icon-28);
+    --swiper-navigation-color: var(--c-primary);
+    --swiper-pagination-color: var(--c-primary);
+    --swiper-pagination-bullet-inactive-color: var(--c-text-white);
+    --swiper-pagination-bullet-inactive-opacity: 0.5;
 }
 
 
-.discription {
-    margin: 80px 0 315px;
-    display: flex;
+.description {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+    padding: 15px 7% 80px;
+}
+
+.description .pic {
     position: relative;
-}
-
-
-.discription::before {
-    position: absolute;
-    display: inline-block;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font: var(--fa-font-solid);
-    content: '\f053';
-    color: var(--c-text-light); /* #dadada */
-    font-size: var(--fs-3xl); /* 40px */
-    left: 0;
-    top: 50%;
-    transform: translate(-250%, -50%);
-}
-
-.discription::after {
-    position: absolute;
-    display: inline-block;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    font: var(--fa-font-solid);
-    content: '\f054';
-    color: var(--c-text-light); /* #dadada */
-    font-size: var(--fs-3xl); /* 40px */
-    right: 0;
-    top: 50%;
-    transform: translate(250%, -50%);
-}
-
-.discription .pic {
-    display: flex;
-    justify-content: end;
+    width: fit-content;
     height: fit-content;
-    position: relative;
 }
 
-.discription .pic.square::before {
+.description .pic.square {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.description .pic.square::before {
     content: "";
     position: absolute;
-    right: 20px;
+    right: 10px;
     top: -10px;
-    width: 467px;
-    height: 467px;
-    border: 1px solid var(--c-primary); /* #CCA455 */
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid var(--c-primary);
+    /* #CCA455 */
 }
 
-.discription .pic img {
+.description .pic img {
     width: 467px;
     height: auto;
 }
 
-.discription .text_pic_wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 62px;
-    align-items: baseline;
+.description .text {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding: 0 3%;
 }
 
-.discription .text_pic_wrap .text {
-    padding: 0 50px;
-}
-
-.discription .text_pic_wrap span {
+.description .text span {
     display: block;
     padding-bottom: 24px;
 }
 
-.discription .text_pic_wrap .pic {
-    padding-left: 132px;
+.description .pic.rectangle {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: center;
 }
 
-.discription .pic.rectangle::before {
+.description .pic.rectangle::before {
     content: "";
     position: absolute;
     right: -10px;
     top: 10px;
-    width: 467px;
-    height: 309px;
-    border: 1px solid var(--c-primary); /* #CCA455 */
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--c-primary);
+    /* #CCA455 */
+}
+
+
+/* ==============RWD=============== */
+@media screen and (max-width: 1200px) {
+
+    body.about .banner {
+        height: 200px;
+    }
+
+    body.about .banner_title {
+        font-size: var(--fs-4xl);
+    }
+
+    .story {
+        flex-direction: column;
+    }
+
+    .story .text h2,
+    .history h2,
+    .history span.fs-3xl {
+        font-size: var(--fs-2xl);
+    }
+
+    .story .text p,
+    .history p {
+        font-size: var(--fs-md);
+    }
+
+    .story .pic {
+        max-width: 80%;
+    }
+
+
+    .col-6 {
+        width: 100%;
+    }
+
+
+    .story .text {
+        margin-bottom: 80px;
+    }
+
+    .description {
+        grid-template-rows: repeat(2, auto);
+        row-gap: 50px;
+    }
+
+
+    .description .pic.square {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 80%;
+        justify-self: end;
+    }
+
+    .description .text {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    .description .pic.rectangle {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        width: 80%;
+        justify-self: baseline;
+    }
+
+    ol li {
+        width: 70px;
+        height: 70px;
+    }
+
+    li span {
+        font-size: var(--fs-md);
+    }
+
+    ol li::before,
+    ol li::after {
+        width: 70px;
+        height: 70px;
+    }
+
+    ol li::before {
+        left: -3px;
+        top: -3px;
+    }
+
+    ol li::after {
+        left: 3px;
+        top: 3px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+
+    ol {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 1fr 1fr;
+        row-gap: 0;
+        column-gap: 0;
+        padding: 40px 10px;
+        position: relative;
+    }
+
+
+    ol li {
+        margin: 0 auto;
+        width: 60px;
+        height: 60px;
+        font-size: var(--fs-base);
+        z-index: 2;
+    }
+
+    li span {
+        font-size: var(--fs-base);
+    }
+
+    ol li::before,
+    ol li::after {
+        width: 60px;
+        height: 60px;
+    }
+
+    ol li::before {
+        left: -3px;
+        top: -3px;
+    }
+
+    ol li::after {
+        left: 3px;
+        top: 3px;
+    }
+
+    ol li:nth-of-type(1) {
+        grid-column: 1;
+    }
+
+    ol li:nth-of-type(2) {
+        grid-column: 2;
+    }
+
+    ol li:nth-of-type(3) {
+        grid-column: 3;
+    }
+
+    ol li:nth-of-type(4) {
+        grid-column: 4;
+    }
+
+    ol li:nth-of-type(5) {
+        grid-column: 5;
+    }
+
+    ol li:nth-of-type(6) {
+        grid-column: 6;
+    }
+
+    ol li:nth-of-type(7) {
+        grid-column: 7;
+    }
+
+
+    ol li:nth-of-type(odd) {
+        grid-row: 1;
+        align-self: end;
+        margin-bottom: -5px;
+    }
+
+    ol li:nth-of-type(even) {
+        grid-row: 2;
+        align-self: start;
+        margin-top: -5px;
+    }
+
+    .timeline-decor {
+        display: none;
+    }
+
+    ol::before {
+        display: none;
+    }
+
+    .history h2 {
+        padding-bottom: 20px;
+    }
+
+    .swiper {
+        margin-top: 0;
+    }
+
+    .description .pic.square::before {
+        right: 5px;
+        top: -5px;
+    }
+
+
+    .description .pic.rectangle::before {
+        content: "";
+        position: absolute;
+        right: -5px;
+        top: 5px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--c-primary);
+        /* #CCA455 */
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .story .text h2,
+    .history h2,
+    .history span.fs-3xl {
+        font-size: var(--fs-xl);
+    }
+
+    .story .text p,
+    .history p {
+        font-size: var(--fs-base);
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+
+        .story .text {
+        margin-bottom: 40px;
+    }
+
+    ol li {
+        margin: 0 auto;
+        width: 40px;
+        height: 40px;
+        font-size: var(--fs-base);
+        z-index: 2;
+    }
+
+    ol li::before,
+    ol li::after {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--c-text-white);
+    }
+
+    ol li::before {
+        left: -2px;
+        top: -2px;
+    }
+
+    ol li::after {
+        left: 2px;
+        top: 2px;
+    }
+
+    li span {
+        font-size: var(--fs-sm);
+        font-weight: var(--fw-medium);
+    }
+
+
+
 }

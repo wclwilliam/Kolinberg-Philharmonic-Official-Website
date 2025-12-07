@@ -400,12 +400,6 @@ h3.card_title {
     transition: .2s;
 }
 
-/* .webshop .card:hover {
-    box-shadow: -4px 4px 10px 0 var(--c-shadow-card);
-    scale: 1.02;
-    transition: .2s;
-} */
-
 .webshop .card i {
     color: var(--c-text-white);
     transition: .2s;
@@ -645,11 +639,6 @@ h3.card_title {
         padding: 0;
     }
 
-    /* .webshop .swiper-button-prev,
-    .webshop .swiper-button-next {
-        top: 40%;
-    } */
-
     .webshop .text {
         padding: 10% 0 7%;
     }
@@ -670,23 +659,7 @@ h3.card_title {
         padding-bottom: 10%;
     }
 
-    .newsletter .col-6 {
-        width: 100%;
-        padding: 0;
-    }
 
-    .newsletter .container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .newsletter {
-        padding: 100px 0;
-    }
-
-    .newsletter .text {
-        padding-bottom: 50px;
-    }
 }
 
 
@@ -774,6 +747,18 @@ h3.card_title {
         text-align: center;
         width: 70vw;
     }
+
+    .webshop .swiper-button-prev {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 0;
+}
+
+.webshop .swiper-button-next {
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 0;
+}
 
     .support .text h2.fs-3xl {
         font-size: var(--fs-2xl);
