@@ -584,15 +584,14 @@ function renderPagination(data) {
             e.preventDefault();
             currentPage = i;
             updateView();
-            // 1. 先抓取你要滾動到的目標元素
-            // 這裡我建議抓取 ".filter_search" (篩選區)，這樣換頁後剛好看到篩選器跟節目
+            // 1. 目標元素
             const targetElement = document.querySelector('.filter_search');
 
             // 2. 執行滾動
-            if (targetElement) { // 確保有抓到元素才滾動，避免報錯
+            if (targetElement) { 
                 targetElement.scrollIntoView({
-                    behavior: 'smooth', // 平滑滾動
-                    block: 'start'      // 讓元素的頂部對齊視窗頂部
+                    behavior: 'smooth', 
+                    block: 'start'
                 });
             }
         });
@@ -615,19 +614,19 @@ function renderCalendar() {
     calendarTitle.textContent = `${monthNames[month]} ${year}`;
 
     // 計算當月資訊
-    const firstDayOfMonth = new Date(year, month, 1).getDay(); // 0(週日)~6
+    const firstDayOfMonth = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
     const lastDayOfWeek = new Date(year, month + 1, 0).getDay();
     const endPadding = 6 - lastDayOfWeek;
 
-    // (A) 產生前面空白格
+    // 產生前面空白格
     for (let i = 0; i < firstDayOfMonth; i++) {
         const emptyCell = document.createElement('div');
         emptyCell.className = 'date_cell empty';
         calendarGrid.appendChild(emptyCell);
     }
 
-    // (B) 產生日期格
+    // 產生日期格
     for (let i = 1; i <= daysInMonth; i++) {
         const cell = document.createElement('div');
         cell.className = 'date_cell';
@@ -640,13 +639,12 @@ function renderCalendar() {
         if (isSameDay(thisCellDate, realToday)) cell.classList.add('today');
         if (isSameDay(thisCellDate, selectedDateObj)) cell.classList.add('selected');
 
-        // 建議修改：檢查 programsForCalendar 決定是否 highlight
+        // 檢查 programsForCalendar 決定是否 highlight
         if (checkHasProgram(thisCellDate)) cell.classList.add('highlight');
 
         // 綁定點擊事件
         cell.addEventListener('click', function () {
             selectedDateObj = new Date(year, month, i);
-            // 建議修改：點擊日期只觸發 masterFilter，不手動 call renderCalendar (會自動重畫)
             masterFilter();
         });
 
@@ -732,8 +730,8 @@ function masterFilter() {
 
     // 4. 重置頁碼並更新畫面
     currentPage = 1;
-    renderCalendar(); // 重畫日曆 (更新光點)
-    updateView();     // 重畫列表
+    renderCalendar();
+    updateView();
 }
 
 // 重整頁面
@@ -752,10 +750,10 @@ document.querySelector('form[role="search"]').addEventListener('submit', functio
 
 // 2. Filter 開關按鈕
 filterToggleBtn.addEventListener('click', function (e) {
-    e.stopPropagation(); // 防止冒泡
+    e.stopPropagation();
     filterDropdown.classList.toggle('hidden');
 
-    // UX 優化：如果篩選打開了，把日曆關掉
+    // 把日曆關掉
     if (!filterDropdown.classList.contains('hidden')) {
         calendarSection.classList.remove('active');
     }
@@ -768,22 +766,22 @@ document.addEventListener('click', function (e) {
     }
 });
 
-// 4. 建議修改：外部 Reset All 按鈕 (若存在才綁定)
+// 4. 外部 Reset All 按鈕
 if (resetAllBtn) {
     resetAllBtn.addEventListener('click', performResetAll);
 }
 
-// 5. 建議修改：內部 Clear Options 按鈕 (只清選項)
+// 5. 內部 Clear Options 按鈕
 if (clearOptionsBtn) {
     clearOptionsBtn.addEventListener('click', function () {
         activeFilters = { composer: [], director: [], location: [] };
         const checkboxes = filterDropdown.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(cb => cb.checked = false);
-        masterFilter(); // 保留搜尋和日期，只重置選項
+        masterFilter();
     });
 }
 
-// 6. 日曆切換月份按鈕 (保留原本的邏輯)
+// 6. 日曆切換月份按鈕
 prevMonthBtn.addEventListener('click', function () {
     currentDisplayDate.setMonth(currentDisplayDate.getMonth() - 1);
     renderCalendar();
@@ -798,17 +796,8 @@ nextMonthBtn.addEventListener('click', function () {
 if (todayBtn) {
     todayBtn.addEventListener('click', function () {
         const today = new Date();
-        
-        // 1. 讓日曆顯示月份變回當月
         currentDisplayDate = today; 
-        
-        // 2. 將「選中日期」也變回今天
         selectedDateObj = today;
-
-        // 3. 呼叫 masterFilter
-        // 因為 masterFilter 會同時處理：
-        // (a) 依照新日期篩選列表 
-        // (b) 呼叫 renderCalendar 重繪日曆 (並把今天的 highlight 加上去)
         masterFilter(); 
     });
 }
@@ -816,11 +805,8 @@ if (todayBtn) {
 // 8. 日曆toggle按鈕
 if (dateToggleBtn) {
     dateToggleBtn.addEventListener('click', function (e) {
-        e.stopPropagation(); // 防止冒泡
-        // 切換 active class
+        e.stopPropagation();
         calendarSection.classList.toggle('active');
-
-        // UX 優化：如果日曆打開了，把篩選選單關掉，避免畫面太亂
         if (calendarSection.classList.contains('active')) {
             filterDropdown.classList.add('hidden');
         }
@@ -828,6 +814,6 @@ if (dateToggleBtn) {
 }
 
 // 初始化執行
-initFilterOptions(); // 先產生篩選選項
-renderCalendar();    // 畫日曆
-masterFilter();      // 執行第一次資料載入
+initFilterOptions();
+renderCalendar();
+masterFilter();
