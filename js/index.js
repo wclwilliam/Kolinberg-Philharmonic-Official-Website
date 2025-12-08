@@ -13,12 +13,6 @@ function initNewsSwiper() {
     const newsWrap = document.querySelector('.news .container .wrap');
     const newsSlides = document.querySelectorAll('.news .container .wrap > a');
 
-    // ★★★ 安全檢查：如果 HTML 還沒準備好，或者改名了找不到，就直接結束，不要報錯
-    if (!newsSection || !newsWrap) {
-        // console.log("找不到新聞區塊元素，稍後再試"); // 測試時可以打開這行
-        return;
-    }
-
     // === 狀況 A: 手機版 (< 920px) ===
     if (screenWidth < 920) {
         if (newsSwiper == undefined) {
@@ -32,7 +26,6 @@ function initNewsSwiper() {
                 loop: true,
                 slidesPerView: 1,
                 spaceBetween: dynamicGap,
-                // ★★★ 記得把這裡的註解拿掉，不然按鈕沒反應 ★★★
                 pagination: { el: '.news .swiper-pagination', clickable: true },
                 navigation: { nextEl: '.news .swiper-button-next', prevEl: '.news .swiper-button-prev' },
             });
@@ -56,14 +49,10 @@ function initNewsSwiper() {
     }
 }
 
-// ★★★ 關鍵修改在這裡 ★★★
-// 不要直接 initNewsSwiper(); 
-// 改用 'load' 事件，確保 HTML/CSS/圖片 全部載入完畢才執行
 window.addEventListener('load', function() {
     initNewsSwiper();
 });
 
-// 監聽縮放 (這行維持原樣)
 window.addEventListener('resize', initNewsSwiper);
 
 

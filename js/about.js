@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const historySwiper = new Swiper('.history .swiper', {
         // 基礎設定
         direction: 'horizontal',
-        loop: false, // 時間軸通常不建議無限循環，這樣邏輯比較清楚
-        speed: 600,  // 切換速度設慢一點，配合優雅的風格
+        loop: false,
+        speed: 600,
         slidesPerView: 1,
-        spaceBetween: 50, // 保持你原本的設定
+        spaceBetween: 50,
         
         // 分頁器與導航
         pagination: {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             prevEl: '.swiper-button-prev',
         },
 
-        // === 核心邏輯：監聽事件 ===
+        // 監聽事件
         on: {
             // 初始化時執行一次，確保第一顆球狀態正確
             init: function() {
@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 根據索引判斷狀態
             if (index < activeIndex) {
-                item.classList.add('past');    // 過去的年份
+                item.classList.add('past');
             } else if (index === activeIndex) {
-                item.classList.add('current'); // 當前的年份
+                item.classList.add('current');
             } else {
-                item.classList.add('future');  // 未來的年份
+                item.classList.add('future');
             }
         });
     }
@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
         item.addEventListener('click', () => {
             historySwiper.slideTo(index);
         });
-        // 為了讓使用者知道可以點，加個手型游標
         item.style.cursor = 'pointer'; 
     });
 });

@@ -27,7 +27,7 @@
 
 .card_icon{
     margin: 40px 0 0 0;
-    font-size: var(--fs-icon-28); /* 改為 28px (原本是 32px) */
+    font-size: var(--fs-icon-28);
     color: var(--c-primary); /* #CCA455 */
     position: relative;
     width: fit-content;

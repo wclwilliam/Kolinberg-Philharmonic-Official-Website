@@ -126,30 +126,19 @@
         font-size: var(--fs-base);
     }
 
-    /* [新增] 針對說明文字的重置設定 */
+
     .product_cardlist .product_description.hovershow {
-        /* 1. 取消絕對定位，讓它乖乖待在標題下面 */
         position: static;
         width: auto;
         height: auto;
         aspect-ratio: auto;
-        /* 取消固定比例 */
-
-        /* 2. 取消隱藏，直接顯示 */
         opacity: 1;
-
-        /* 3. 取消黑色遮罩背景，改回深色文字 */
         background-color: transparent;
         color: var(--c-text-main);
-
-        /* 4. 調整間距與排版 */
         margin-top: 15px;
-        /* 與標題的距離 */
         display: block;
-        /* 取消 flex center */
     }
 
-    /* 修正內文 padding (原本有左右 padding) */
     .product_cardlist .product_description.hovershow p {
         padding: 0;
     }

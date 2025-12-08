@@ -10,7 +10,7 @@ const programsData = [
         location: "Berlin",
         composer: ["Mahler"],
         director: ["James"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_2.jpg",
         description: "Experience the emotional depth of Mahler’s masterpiece, featuring the famous Adagietto."
     },
     {
@@ -22,7 +22,7 @@ const programsData = [
         location: "Vienna",
         composer: ["Beethoven"],
         director: ["Rattle"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_3.jpg",
         description: "A monumental performance of Beethoven's Ninth, celebrating joy and universal brotherhood."
     },
     {
@@ -34,7 +34,7 @@ const programsData = [
         location: "London",
         composer: ["Mozart"],
         director: ["Thielemann"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_4.jpg",
         description: "An evening dedicated to Mozart's most brilliant and lyrical works for piano and orchestra."
     },
     {
@@ -58,7 +58,7 @@ const programsData = [
         location: "New York",
         composer: ["Brahms"],
         director: ["Rattle"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_2.jpg",
         description: "Often called 'Beethoven's Tenth', this symphony reveals Brahms' mastery of orchestral power."
     },
     {
@@ -70,7 +70,7 @@ const programsData = [
         location: "Berlin",
         composer: ["Bach"],
         director: ["Thielemann"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_3.jpg",
         description: "An intimate performance of Bach’s timeless suites, exploring the pure essence of the cello."
     },
     {
@@ -82,7 +82,7 @@ const programsData = [
         location: "Vienna",
         composer: ["Chopin"],
         director: ["James"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_4.jpg",
         description: "A romantic evening featuring Chopin’s Nocturnes and Ballades, performed with poetic touch."
     },
     {
@@ -106,7 +106,7 @@ const programsData = [
         location: "Berlin",
         composer: ["Bach"],
         director: ["Thielemann"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_2.jpg",
         description: "Celebrate Christmas with Bach's glorious oratorio, featuring full choir and orchestra."
     },
     {
@@ -118,7 +118,7 @@ const programsData = [
         location: "Berlin",
         composer: ["Beethoven"],
         director: ["James"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_3.jpg",
         description: "Ring in the new year with the triumphant sounds of Beethoven's Eroica Symphony."
     },
 
@@ -132,7 +132,7 @@ const programsData = [
         location: "Vienna",
         composer: ["Mozart"],
         director: ["Rattle"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_4.jpg",
         description: "Start 2026 with the grace and elegance of Mozart's finest symphonies in Vienna."
     },
     {
@@ -156,7 +156,7 @@ const programsData = [
         location: "New York",
         composer: ["Rachmaninoff"],
         director: ["Thielemann"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_2.jpg",
         description: "Sweeping melodies and lush harmonies define this beloved romantic Russian masterpiece."
     },
     {
@@ -168,7 +168,7 @@ const programsData = [
         location: "London",
         composer: ["Mahler"],
         director: ["Rattle"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_3.jpg",
         description: "Mahler's Symphony No. 2, a colossal work exploring life, death, and spiritual rebirth."
     },
     {
@@ -180,7 +180,7 @@ const programsData = [
         location: "Berlin",
         composer: ["Beethoven"],
         director: ["James"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_4.jpg",
         description: "The most famous four notes in history drive this journey from darkness into light."
     },
     {
@@ -204,7 +204,7 @@ const programsData = [
         location: "Tokyo",
         composer: ["Tchaikovsky"],
         director: ["Rattle"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_2.jpg",
         description: "A virtuoso showcase featuring one of the most beloved concertos in the repertoire."
     },
     {
@@ -216,7 +216,7 @@ const programsData = [
         location: "London",
         composer: ["Brahms"],
         director: ["James"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_3.jpg",
         description: "A deeply human requiem offering comfort and hope, performed by full choir."
     },
     {
@@ -228,7 +228,7 @@ const programsData = [
         location: "Berlin",
         composer: ["Bach"],
         director: ["Thielemann"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_4.jpg",
         description: "A chamber arrangement of Bach's intricate variations, displaying mathematical beauty."
     },
     {
@@ -254,7 +254,7 @@ const programsData = [
         location: "Berlin",
         composer: ["Wagner"],
         director: ["James"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_2.jpg",
         description: "Epic orchestral selections from Wagner's Ring Cycle, exploring myth and power."
     },
     {
@@ -266,7 +266,7 @@ const programsData = [
         location: "Vienna",
         composer: ["Stravinsky"],
         director: ["Thielemann"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_3.jpg",
         description: "The revolutionary ballet score that changed music forever with its primal rhythms."
     },
     {
@@ -278,7 +278,7 @@ const programsData = [
         location: "London",
         composer: ["Rachmaninoff"],
         director: ["Rattle"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_4.jpg",
         description: "Known as the 'Everest of Piano Concertos', a test of endurance and virtuosity."
     },
     {
@@ -302,7 +302,7 @@ const programsData = [
         location: "New York",
         composer: ["Tchaikovsky"],
         director: ["Thielemann"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_2.jpg",
         description: "A romantic evening featuring Romeo and Juliet and other passionate love themes."
     },
     {
@@ -314,7 +314,7 @@ const programsData = [
         location: "Berlin",
         composer: ["Beethoven"],
         director: ["Rattle"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_3.jpg",
         description: "Beethoven's grandest piano concerto, heroic in spirit and symphonic in scale."
     },
     {
@@ -326,7 +326,7 @@ const programsData = [
         location: "Vienna",
         composer: ["Mozart"],
         director: ["James"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_4.jpg",
         description: "Mozart's final unfinished masterpiece, shrouded in mystery and divine beauty."
     },
     {
@@ -350,7 +350,7 @@ const programsData = [
         location: "Tokyo",
         composer: ["Bach"],
         director: ["Rattle"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_2.jpg",
         description: "The pinnacle of Baroque orchestral music, performed on modern instruments."
     },
     {
@@ -362,7 +362,7 @@ const programsData = [
         location: "Berlin",
         composer: ["Chopin"],
         director: ["James"],
-        image: "./image/2_program/program_467_309.jpg",
+        image: "./image/2_program/program_3.jpg",
         description: "Closing the month with the youthful and brilliant piano concertos of Chopin."
     }
 ];
@@ -374,10 +374,10 @@ const itemsPerPage = 5;
 // 初始值為第1頁
 let currentPage = 1;
 // 節目數量(未篩選) (預設為全部節目數量)
-// 建議修改：這裡實際上現在是「列表顯示用的資料 (經過日期篩選)」
+// 「列表顯示用的資料 (經過日期篩選)」
 let currentData = programsData;
 
-// 建議修改：新增變數 - 日曆判定用資料 (經過內容篩選，但尚未經過日期篩選)
+// 新增變數 - 日曆判定用資料 (經過內容篩選，但尚未經過日期篩選)
 let programsForCalendar = programsData;
 
 // 日曆目前顯示的月份
@@ -499,7 +499,6 @@ function renderPrograms(data) {
 
     //如果沒有資料
     if (data.length === 0) {
-        // 建議修改：使用 class 取代 inline style，並加入重置按鈕連結
         container.innerHTML = `
                 <div class="no_result_msg">
                     <p class="fs-xl fw-bold text-secondary">No programs found.</p>
@@ -795,11 +794,22 @@ nextMonthBtn.addEventListener('click', function () {
     renderCalendar();
 });
 
-// 7. 建議修改：Back to Today 按鈕
+// 7. Back to Today 按鈕
 if (todayBtn) {
     todayBtn.addEventListener('click', function () {
-        currentDisplayDate = new Date(); // 切換回當前月份
-        renderCalendar();
+        const today = new Date();
+        
+        // 1. 讓日曆顯示月份變回當月
+        currentDisplayDate = today; 
+        
+        // 2. 將「選中日期」也變回今天
+        selectedDateObj = today;
+
+        // 3. 呼叫 masterFilter
+        // 因為 masterFilter 會同時處理：
+        // (a) 依照新日期篩選列表 
+        // (b) 呼叫 renderCalendar 重繪日曆 (並把今天的 highlight 加上去)
+        masterFilter(); 
     });
 }
 

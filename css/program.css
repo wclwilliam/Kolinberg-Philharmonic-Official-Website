@@ -18,18 +18,17 @@
 }
 
 .program_link_wrapper {
-    display: block; /* 讓它佔滿空間 */
-    text-decoration: none; /* 移除底線 */
-    color: inherit; /* 繼承原本文字顏色 (避免變藍色) */
-    width: 100%; /* 確保寬度正確 */
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
 }
 
-/* 確保滑鼠移過去有手指游標 (雖然 a 標籤預設就有，但保險起見) */
 .program_link_wrapper:hover {
     cursor: pointer;
 }
 
-.card_wrap .card:nth-last-child(1) {
+.card_wrap a:nth-last-child(1) {
     padding: 40px 0 0 0;
     border: none;
 }
@@ -232,7 +231,6 @@
     background-color: var(--c-text-white);
     /* #fff */
     border: 1px solid var(--c-primary);
-    border-radius: 10px;
     padding: 20px;
     z-index: 100;
     /* 確保浮在最上面 */
@@ -292,7 +290,6 @@
     padding: 4px 8px;
     background-color: var(--c-bg-general);
     /* 淺色背景區隔 */
-    border-radius: 4px;
     color: var(--c-text-main);
 }
 
