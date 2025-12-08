@@ -410,16 +410,16 @@
     }
 }
 
+
 @media screen and (max-width: 1300px) {
+
     .container {
         width: 100%;
         padding-left: 5%;
         padding-right: 5%;
     }
-}
-
-@media screen and (max-width: 1240px) {
-
+    
+    
     /* 顯示日期按鈕 */
     .filter_area .date_toggle_btn {
         display: inline-flex;
